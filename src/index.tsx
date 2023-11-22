@@ -248,13 +248,7 @@ const Route: FC<AppProps> = () => {
         }}
         ListEmptyComponent={
           !isLoading && (
-            <View
-              style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: height / 2,
-              }}>
+            <View style={styles.loadmore}>
               <Text style={styles.header}>{'No Data Found'}</Text>
             </View>
           )
@@ -283,11 +277,18 @@ const Route: FC<AppProps> = () => {
 export default Route;
 
 const styles = StyleSheet.create({
+  loadmore: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: height / 2,
+  },
   mainCont: {
     flex: 1,
     marginTop: height / 14,
     paddingHorizontal: 16,
     zIndex: 1,
+    backgroundColor: 'white',
   },
   headerText: {
     textAlign: 'center',
